@@ -1,0 +1,33 @@
+import random
+import turtle
+from turtle import Screen, Turtle
+
+FONT = ('Arial', 30, 'normal')
+
+
+
+
+
+
+def countdown(time):
+    turtle.clear()
+    if time > 0:
+        turtle.setposition(0, 400)
+        turtle.penup()
+        turtle.write(time, align='center', font=FONT)
+        screen.ontimer(lambda: countdown(time - 1), 1000)
+    else:
+        turtle.write("Click Screen", align='center', font=FONT)
+        screen.onclick(lambda x, y: countdown(30))
+        turtle.penup()
+
+screen = Screen()
+
+turtle = Turtle()
+turtle.write("Click Screen", align='center', font=FONT)
+
+screen.onclick(lambda x, y: countdown(30))
+
+movingTurtle()
+
+screen.mainloop()
